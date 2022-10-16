@@ -27,7 +27,7 @@ public class Menu {
                     comand = Main.sc.nextInt();
                     insertComand.insertComandMenu(comand);
 
-                }while (comand != 3);
+                }while (comand != 5);
                 break;
 
             case 2:
@@ -45,10 +45,6 @@ public class Menu {
         }
     }
 
-    //Metodo que consiste en el almacenamiento de datos .SQL
-    public void Storage(String list, String url){
-
-    }
 
     //Metodo que consiste en la importacion de datos .SQL
     public void importdata(String url){

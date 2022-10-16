@@ -1,5 +1,7 @@
 package model;
 
+import ui.Main;
+
 public class InsertComand {
     Insert insert = new Insert();
     SearchAndFiltering sf = new SearchAndFiltering();
@@ -10,7 +12,12 @@ public class InsertComand {
         switch (comand){
             case 1: //Agregar datos
                 System.out.println("Haz seleccionado la opcion INSERT INTO");
+                System.out.println("Que dato va a ingresar, va a ingresar un Pais o una ciudad");
+                System.out.println("1. Pais");
+                System.out.println("2. Ciudad");
+                int cc = Main.sc.nextInt();
 
+                insert.countryorCity(cc);
                 break;
 
             case 2:// busqueda y filtracion

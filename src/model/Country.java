@@ -7,12 +7,13 @@ public class Country {
     private String countryCode;
 
     // Constructor
-    public Country(String id) {
+    public Country(String id, String name, int population, String countryCode) {
         this.id = id; // 6ec3e8ec-3dd0-11ed-b878-0242ac120002
         this.name = name; // Colombia
         this.population = population; // 50.2
         this.countryCode = countryCode; // +57
     }
+
 
     //Getter n Setter
     public String getId() {return id;}
