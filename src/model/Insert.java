@@ -28,7 +28,7 @@ public class Insert {
                 String a = Main.sc.nextLine();
                 String name = Main.sc.nextLine();
                 System.out.println("Ingrese la poblacion");
-                int population = Main.sc.nextInt();
+                long population = Main.sc.nextInt();
                 System.out.println("Ingrese el indicativo del pais");
                 String b = Main.sc.nextLine();
                 String countryCode = Main.sc.nextLine();
@@ -52,7 +52,7 @@ public class Insert {
                 String c = Main.sc.nextLine();
                 String nameCity = Main.sc.nextLine();
                 System.out.println("Ingrese la poblacion");
-                int populationCity = Main.sc.nextInt();
+                long populationCity = Main.sc.nextInt();
                 System.out.println("ID del pais que pertenece");
                 String idCountry = UUID.randomUUID().toString();
                 System.out.println(idCountry);

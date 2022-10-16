@@ -2,8 +2,6 @@ package model;
 
 import ui.Main;
 
-import java.util.Scanner;
-
 public class Menu {
     InsertComand insertComand = new InsertComand();
 
@@ -17,7 +15,7 @@ public class Menu {
 
                 do {
                     System.out.println("Selecciona la opcion que desea ejecutar escribiendo" +
-                            "el numero correspondiente");
+                            " el numero correspondiente");
                     System.out.println("1. INSERT INTO");
                     System.out.println("2. SELECT * FROM WHERE");
                     System.out.println("3. SELECT * FROM WHERE ORDER BY");

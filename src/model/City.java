@@ -4,10 +4,10 @@ public class City{
     private String idCountry;
     private String idCity; // UUID
     private String nameCity;
-    private int populationCity;
+    private long populationCity;
 
     // Constructor
-    public City(String idCity,String nameCity, String idCountry,  int populationCity) {
+    public City(String idCity,String nameCity, String idCountry,  long populationCity) {
         this.idCountry = idCountry;
         this.idCity = idCity; // UUID
         this.nameCity = nameCity;
@@ -24,6 +24,6 @@ public class City{
     public String getNameCity() {return nameCity;}
     public void setNameCity(String nameCity) {this.nameCity = nameCity;}
 
-    public int getPopulationCity() {return populationCity;}
-    public void setPopulationCity(int populationCity) {this.populationCity = populationCity;}
+    public long getPopulationCity() {return populationCity;}
+    public void setPopulationCity(long populationCity) {this.populationCity = populationCity;}
 }

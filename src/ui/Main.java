@@ -13,12 +13,12 @@ public class Main {
         int option;
 
         System.out.println("------------------------------------------------");
-        System.out.println("Bienvenidos al SISTEMA DE INFORMACION GEOGRAFICA");
+        System.out.println("Bienvenidos al SISTEMA DE INFORMACIÓN GEOGRAFICA");
         System.out.println("------------------------------------------------");
 
         do {
             System.out.println("Selecciona la opcion que desea ejecutar escribiendo" +
-                    "el numero correspondiente");
+                    " el numero correspondiente");
             System.out.println("1. Insertar Comando");
             System.out.println("2. Importar datos desde archivo .SQL");
             System.out.println("3. Salir");
