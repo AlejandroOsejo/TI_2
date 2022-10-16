@@ -4,6 +4,7 @@ import model.Menu;
 
 import java.util.Scanner;
 
+
 public class Main {
     public static Scanner sc = new Scanner(System.in);
 
@@ -14,6 +15,7 @@ public class Main {
         System.out.println("------------------------------------------------");
         System.out.println("Bienvenidos al SISTEMA DE INFORMACION GEOGRAFICA");
         System.out.println("------------------------------------------------");
+
         do {
             System.out.println("Selecciona la opcion que desea ejecutar escribiendo" +
                     "el numero correspondiente");

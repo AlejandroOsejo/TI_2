@@ -1,7 +1,13 @@
 package model;
 
+import com.google.gson.Gson;
 import ui.Main;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class Insert {
@@ -9,7 +15,12 @@ public class Insert {
     public void countryorCity(int option){
         switch (option){
             case 1://Pais
-                System.out.println("Ingrese los siguientes datos ");
+                ArrayList<Country> countries = new ArrayList<>();
+
+                System.out.println("------------------------------------");
+                System.out.println("--- Ingrese los siguientes datos ---");
+                System.out.println("------------------------------------\n");
+
                 System.out.println("ID del pais");
                 String id = UUID.randomUUID().toString();
                 System.out.println(id);
@@ -23,12 +34,17 @@ public class Insert {
                 String countryCode = Main.sc.nextLine();
                 Country country = new Country(id, name, population, countryCode);
 
-                insertCountry(country);
+                countries.add(new Country(id, name, population, countryCode));
+                insertCountry(country, countries);
                 break;
 
             case 2://Ciudad
-                System.out.println("Ingrese los siguientes datos de la ciudad");
-                System.out.println("Ingrese los siguientes datos ");
+                ArrayList<City> cities = new ArrayList<>();
+
+                System.out.println("------------------------------------");
+                System.out.println("--- Ingrese los siguientes datos ---");
+                System.out.println("------------------------------------\n");
+
                 System.out.println("ID de la ciudad");
                 String idCity = UUID.randomUUID().toString();
                 System.out.println(idCity);
@@ -42,7 +58,8 @@ public class Insert {
                 System.out.println(idCountry);
                 City city = new City(idCity, nameCity, idCountry, populationCity);
 
-                insertCity(city);
+                cities.add(new City(idCity, nameCity, idCountry, populationCity));
+                insertCity(city, cities);
                 break;
 
             default:
@@ -50,11 +67,61 @@ public class Insert {
         }
     }
 
-    public void insertCountry(Country country){
-        System.out.println("Datos guardados en la base de datos");
+    public void insertCountry(Country country, ArrayList<Country> countries){
+        ArrayList<Country> listGson = new ArrayList<>();
+
+        Gson gson = new Gson();
+        String data = gson.toJson(countries);
+        for (Country c : listGson){
+            data += c.getId() + ";" +
+                    c.getName() + ";" +
+                    c.getPopulation() + ";" +
+                    c.getCountryCode();
+        }
+
+        try {
+            FileOutputStream fos = new FileOutputStream("paises.json");
+            fos.write(data.getBytes(StandardCharsets.UTF_8));
+            fos.close();
+        }catch (FileNotFoundException e) {
+           e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("///////////////////////////////////////////");
+        System.out.println("--- Datos guardados en la base de datos ---");
+        System.out.println("INSERT INTO countries (id, nombre, poblacion y indicativo del pais) VALUES " +
+                data);
+        System.out.println("///////////////////////////////////////////\n");
     }
 
-    public void insertCity(City city){
-        System.out.println("Datos guardados en la base de datos");
+    public void insertCity(City city, ArrayList<City> cities){
+        ArrayList<City> listGson = new ArrayList<>();
+
+        Gson gson = new Gson();
+        String data = gson.toJson(cities);
+        for (City c : listGson){
+            data += c.getIdCity() + ";" +
+                    c.getNameCity() + ";" +
+                    c.getIdCountry() + ";" +
+                    c.getPopulationCity();
+        }
+
+        try {
+            FileOutputStream fos = new FileOutputStream("ciudades.json");
+            fos.write(data.getBytes(StandardCharsets.UTF_8));
+            fos.close();
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("///////////////////////////////////////////");
+        System.out.println("--- Datos guardados en la base de datos ---");
+        System.out.println("INSERT INTO cities (id, nombre, id del pais y poblacion) VALUES " +
+                data);
+        System.out.println("///////////////////////////////////////////\n");
     }
 }
