@@ -6,6 +6,9 @@ public class City{
     private String nameCity;
     private long populationCity;
 
+    private City right;
+    private City left;
+
     // Constructor
     public City(String idCity,String nameCity, String idCountry,  long populationCity) {
         this.idCountry = idCountry;
@@ -15,6 +18,12 @@ public class City{
     }
 
     //Getter n Setter
+    public City getRight() {return right;}
+    public void setRight(City right) {this.right = right;}
+
+    public City getLeft() {return left;}
+    public void setLeft(City left) {this.left = left;}
+
     public String getIdCountry(){return idCountry;}
     public void setIdCountry(String idCountry) {this.idCountry = idCountry;}
 

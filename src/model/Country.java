@@ -6,6 +6,9 @@ public class Country {
     private long population;
     private String countryCode;
 
+    private Country right;
+    private Country left;
+
     // Constructor
     public Country(String id, String name, long population, String countryCode) {
         this.id = id; // 6ec3e8ec-3dd0-11ed-b878-0242ac120002
@@ -16,6 +19,12 @@ public class Country {
 
 
     //Getter n Setter
+    public Country getRight() {return right;}
+    public void setRight(Country right) {this.right = right;}
+
+    public Country getLeft() {return left;}
+    public void setLeft(Country left) {this.left = left;}
+
     public String getId() {return id;}
     public void setId(String id) {this.id = id;}
 
