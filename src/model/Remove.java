@@ -19,7 +19,13 @@ public class Remove {
     }
 
     public void deleteCountry(){
+        //Debe recibir la lista de paises
+        //eliminar un pais por el nombre
 
     }
-    public void
+    public void deleteVity(){
+        //DEbe recibir la lista de ciudades
+        //eliminar una ciudad ´por el nombre
+
+    }
 }

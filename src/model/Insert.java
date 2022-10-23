@@ -8,14 +8,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.UUID;
 
-public class Insert {
+public class Insert implements Comparator<Country> {
     ArrayList<Country> countries = new ArrayList<>();
     ArrayList<City> cities = new ArrayList<>();
 
-    public void countryorCity(int option){
-        switch (option){
+    public void countryorCity(int option) {
+        switch (option) {
             case 1://Pais
 
                 System.out.println("------------------------------------");
@@ -67,13 +68,13 @@ public class Insert {
         }
     }
 
-    public void insertCountry(Country country, ArrayList<Country> countries){
+    public void insertCountry(Country country, ArrayList<Country> countries) {
         ArrayList<Country> listGson = new ArrayList<>();
 
         //Guardar GSON
         Gson gson = new Gson();
         String data = gson.toJson(countries);
-        for (Country c : listGson){
+        for (Country c : listGson) {
             data += c.getId() + ";" +
                     c.getName() + ";" +
                     c.getPopulation() + ";" +
@@ -84,8 +85,8 @@ public class Insert {
             FileOutputStream fos = new FileOutputStream("paises.json");
             fos.write(data.getBytes(StandardCharsets.UTF_8));
             fos.close();
-        }catch (FileNotFoundException e) {
-           e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,12 +98,12 @@ public class Insert {
         System.out.println("///////////////////////////////////////////\n");
     }
 
-    public void insertCity(City city, ArrayList<City> cities){
+    public void insertCity(City city, ArrayList<City> cities) {
         ArrayList<City> listGson = new ArrayList<>();
 
         Gson gson = new Gson();
         String data = gson.toJson(cities);
-        for (City c : listGson){
+        for (City c : listGson) {
             data += c.getIdCity() + ";" +
                     c.getNameCity() + ";" +
                     c.getIdCountry() + ";" +
@@ -113,7 +114,7 @@ public class Insert {
             FileOutputStream fos = new FileOutputStream("ciudades.json");
             fos.write(data.getBytes(StandardCharsets.UTF_8));
             fos.close();
-        }catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,5 +125,15 @@ public class Insert {
         System.out.println("INSERT INTO cities (id, nombre, id del pais y poblacion) VALUES " +
                 data);
         System.out.println("///////////////////////////////////////////\n");
+    }
+
+    @Override
+    public int compare(Country o1, Country o2) {
+        if (o1.getPopulation() > o2.getPopulation()){
+            return -1;
+        }else if (o1.getPopulation() < o2.getPopulation()){
+            return 1;
+        }
+        return o1.getName().compareTo(o2.getName());
     }
 }

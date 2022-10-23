@@ -1,10 +1,12 @@
 package model;
 
-public class Country {
+public class Country  {
     private String id; //UUID
     private String name;
     private long population;
     private String countryCode;
+
+
 
     private Country right;
     private Country left;
@@ -36,4 +38,7 @@ public class Country {
 
     public String getCountryCode() {return countryCode;}
     public void setCountryCode(String countryCode) {this.countryCode = countryCode;}
+
+
+
 }
