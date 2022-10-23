@@ -18,7 +18,7 @@ public class SearchAndFiltering {
                 System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de paises");
                 filter = Main.sc.nextInt();
 
-                filterCountries(filter, insert.countries);
+                filterCountries(filter);
                 break;
 
             case 2:
@@ -42,17 +42,12 @@ public class SearchAndFiltering {
         Collections.sort(insert.countries, p1);//Organizados por poblacion
 
         //Se necesita hallar a un pais por su poblacion
-        ArrayList<Long> temp = new ArrayList<>();
-        for (int i=0; i>insert.countries.size(); i++){
-            temp = insert.countries
-        }
-
         int left = 0;
-        int right = insert.countries.size() - 1;
+        int right = insert.listGsonCountry.size() - 1;
 
         while (left <= right){
             int mid = left + (right - left) / 2;
-            if (insert.countries.get(mid)> requesPopulation){
+            if (insert.countries.get(mid).getPopulation()> requesPopulation){
 
             }
         }

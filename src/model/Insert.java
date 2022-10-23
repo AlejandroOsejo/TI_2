@@ -14,6 +14,9 @@ import java.util.UUID;
 public class Insert implements Comparator<Country> {
     ArrayList<Country> countries = new ArrayList<>();
     ArrayList<City> cities = new ArrayList<>();
+    ArrayList<Country> listGsonCountry = new ArrayList<>();
+    ArrayList<City> listGsonCity = new ArrayList<>();
+
 
     public void countryorCity(int option) {
         switch (option) {
@@ -69,12 +72,11 @@ public class Insert implements Comparator<Country> {
     }
 
     public void insertCountry(Country country, ArrayList<Country> countries) {
-        ArrayList<Country> listGson = new ArrayList<>();
 
         //Guardar GSON
         Gson gson = new Gson();
         String data = gson.toJson(countries);
-        for (Country c : listGson) {
+        for (Country c : listGsonCountry) {
             data += c.getId() + ";" +
                     c.getName() + ";" +
                     c.getPopulation() + ";" +
@@ -99,11 +101,10 @@ public class Insert implements Comparator<Country> {
     }
 
     public void insertCity(City city, ArrayList<City> cities) {
-        ArrayList<City> listGson = new ArrayList<>();
 
         Gson gson = new Gson();
         String data = gson.toJson(cities);
-        for (City c : listGson) {
+        for (City c : listGsonCity) {
             data += c.getIdCity() + ";" +
                     c.getNameCity() + ";" +
                     c.getIdCountry() + ";" +
