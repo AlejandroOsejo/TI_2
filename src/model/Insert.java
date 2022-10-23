@@ -13,11 +13,6 @@ import java.util.UUID;
 public class Insert {
     ArrayList<Country> countries = new ArrayList<>();
     ArrayList<City> cities = new ArrayList<>();
-    private Country rootCountry;
-    private City rootCity;
-
-    public Country getRootCountry() {return rootCountry;}
-    public void setRootCountry(Country rootCountry) {this.rootCountry = rootCountry;}
 
     public void countryorCity(int option){
         switch (option){
@@ -75,12 +70,6 @@ public class Insert {
     public void insertCountry(Country country, ArrayList<Country> countries){
         ArrayList<Country> listGson = new ArrayList<>();
 
-        if (rootCountry == null){
-            rootCountry = country;
-        }else {
-            insertCountry(country, rootCountry);
-        }
-
         //Guardar GSON
         Gson gson = new Gson();
         String data = gson.toJson(countries);
@@ -107,24 +96,9 @@ public class Insert {
                 data);
         System.out.println("///////////////////////////////////////////\n");
     }
-    private void insertCountry(Country country, Country current){
-        if (country.getPopulation() < current.getPopulation()){
-            if (current.getLeft() != null){
-                insertCountry(country, current.getLeft());
-            }else {
-                current.setRight(country);
-            }
-        }
-    }
 
     public void insertCity(City city, ArrayList<City> cities){
         ArrayList<City> listGson = new ArrayList<>();
-
-        if (rootCity == null){
-            rootCity = city;
-        }else {
-            insertCity(city, rootCity);
-        }
 
         Gson gson = new Gson();
         String data = gson.toJson(cities);
@@ -151,12 +125,4 @@ public class Insert {
                 data);
         System.out.println("///////////////////////////////////////////\n");
     }
-    private void insertCity(City city, City current){
-        if (city.getPopulationCity() < city.getPopulationCity()){
-            if (current.getLeft() != null){
-                insertCity(city, current.getLeft());
-            }else {
-                current.setRight(city);
-            }
-        }
-    }}
+}

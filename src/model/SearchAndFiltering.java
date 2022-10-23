@@ -2,56 +2,30 @@ package model;
 
 import ui.Main;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class SearchAndFiltering {
+    Insert insert = new Insert();
 
     public void filter(int search){
-        int higherLower;
-        int num = 0;
+        int filter;
 
         switch (search){
             case 1:
                 System.out.println("Has seleccionado paises");
-                System.out.println("Ingrese si desea imprimir los datos mayor o menor a cierto numero");
-                System.out.println("1. mayor");
-                System.out.println("2. menor");
-                higherLower = Main.sc.nextInt();
+                System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de paises");
+                filter = Main.sc.nextInt();
 
-                if (higherLower == 1){
-                    System.out.println("Ingresa el numero como base para imprimir todos los paises con una " +
-                            "poblacion superior al numero");
-                    num = Main.sc.nextInt();
-                } else if (higherLower == 2){
-                    System.out.println("Ingrese el numero como base paraimprimir todos los paises con una " +
-                            "poblacion menor al numero");
-                    num = Main.sc.nextInt();
-                }else{
-                    System.out.println("DEBES INGRESAR OBLIGATORIAMENTE SI ES MAYOR O MENOR");
-                }
-
-
-                filterCountries(num);
+                filterCountries(filter, insert.countries);
                 break;
 
             case 2:
                 System.out.println("Has seleccionado ciudades");
-                System.out.println("Ingrese si desea imprimir los datos mayor o menor a cierto numero");
-                System.out.println("1. mayor\n" +
-                        "2. menor");
-                higherLower = Main.sc.nextInt();
+                System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de ciudades");
+                filter = Main.sc.nextInt();
 
-                if (higherLower == 1){
-                    System.out.println("Ingresa el numero como base para imprimir todos los paises con una " +
-                            "poblacion superior al numero");
-                    num = Main.sc.nextInt();
-                } else if (higherLower == 2){
-                    System.out.println("Ingrese el numero como base paraimprimir todos los paises con una " +
-                            "poblacion menor al numero");
-                    num = Main.sc.nextInt();
-                }else{
-                    System.out.println("DEBES INGRESAR OBLIGATORIAMENTE SI ES MAYOR O MENOR");
-                }
-
-                filterCities(num);
+                filterCities(filter, insert.cities);
                 break;
 
             default:
@@ -59,11 +33,26 @@ public class SearchAndFiltering {
         }
     }
 
-    public void filterCountries(int requesPopulation){
+    public int filterCountries(int requesPopulation, ArrayList<Country> countries){
+        ArrayList<Country> temp = new ArrayList<>();
 
+        int left = 0;
+        int right = countries.size() - 1;
+
+        for (Country c : temp){
+
+        }
+
+        while (left <= right){
+            int mid = left + (right - left) / 2;
+            if (countries.get(mid) > requesPopulation){
+
+            }
+        }
+        return -1;
     }
 
-    public void filterCities(int requesPopulation){
+    public void filterCities(int requesPopulation, ArrayList<City> cities){
 
     }
 }
