@@ -1,6 +1,6 @@
 package model;
 
-public class Country  {
+public class Country implements Comparable<Country> {
     private String id; //UUID
     private String name;
     private long population;
@@ -40,5 +40,12 @@ public class Country  {
     public void setCountryCode(String countryCode) {this.countryCode = countryCode;}
 
 
-
+    @Override
+    public int compareTo(Country o) {
+        if (this.getPopulation() > o.getPopulation()){
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 }

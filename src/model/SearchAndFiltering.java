@@ -34,12 +34,13 @@ public class SearchAndFiltering {
         }
     }
 
-    public void filterCountries(int requesPopulation){
+    public int filterCountries(int requesPopulation){
+        Country comparePopulation = new Country("", "", requesPopulation, "");
         //traer la lista --> también crear una lista temp para guardar los datos de la póblacion y repartirlos
         //buscar pais por poblacion
 
         Comparator<Country> p1 = new Insert();
-        Collections.sort(insert.countries, p1);//Organizados por poblacion
+        Collections.sort(insert.listGsonCountry, p1);//Organizados por poblacion
 
         //Se necesita hallar a un pais por su poblacion
         int left = 0;
@@ -47,11 +48,17 @@ public class SearchAndFiltering {
 
         while (left <= right){
             int mid = left + (right - left) / 2;
-            if (insert.countries.get(mid).getPopulation()> requesPopulation){
-
+            if (insert.listGsonCountry.get(mid).getPopulation()> requesPopulation){
+                right = mid - 1;
+            } else if (comparePopulation.compareTo(insert.listGsonCountry.get(mid))) { // Debe ser una lista de numeros porque lo esta preguntando por un numero exacto
+                left = mid + 1;
+            } else {
+                return mid;
             }
+            return -1;
         }
 
+        return left;
     }
 
     public void filterCities(int requesPopulation, ArrayList<City> cities){
