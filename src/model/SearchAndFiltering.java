@@ -50,7 +50,7 @@ public class SearchAndFiltering {
             int mid = left + (right - left) / 2;
             if (insert.listGsonCountry.get(mid).getPopulation()> requesPopulation){
                 right = mid - 1;
-            } else if (comparePopulation.compareTo(insert.listGsonCountry.get(mid))) { // Debe ser una lista de numeros porque lo esta preguntando por un numero exacto
+            } else if (comparePopulation.getPopulation() >insert.countries.get()) { // Debe ser una lista de numeros porque lo esta preguntando por un numero exacto
                 left = mid + 1;
             } else {
                 return mid;
@@ -64,6 +64,8 @@ public class SearchAndFiltering {
     public void filterCities(int requesPopulation, ArrayList<City> cities){
 
     }
+
+
 
 
 }

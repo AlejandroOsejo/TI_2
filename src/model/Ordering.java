@@ -1,8 +1,5 @@
 package model;
 
-import java.util.Collections;
-import java.util.Comparator;
-
 public class Ordering {
     Insert insert = new Insert();
 
@@ -25,13 +22,13 @@ public class Ordering {
     }
 
     public void orderCountry(){//metodo de organizar la lista por la poblacion, paises
-        Comparator<Country> p1 = new Insert();
-        Collections.sort(insert.listGsonCountry, p1);
+        //Comparator<Country> p1 = new Insert();
+        //Collections.sort(insert.countries, p1);
 
         System.out.println("LISTA DE LOS PAISES DE MAYOR A MENOR POBLACION");
-        for (int i=0; i>insert.listGsonCountry.size(); i++){
-            System.out.println(insert.listGsonCountry.get(i).getPopulation() + " " +
-                    insert.listGsonCountry.get(i).getName());
+        for (int i=0; i>insert.countries.size(); i++){ // coge la lista donde se guardan los paises pero esta vacía, no sé como solucionarlo
+            System.out.println(insert.countries.get(i).getPopulation() + " " +
+                    insert.countries.get(i).getName());
         }
     }
 
