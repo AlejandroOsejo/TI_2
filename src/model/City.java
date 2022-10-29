@@ -1,6 +1,6 @@
 package model;
 
-public class City{
+public class City implements Comparable <City>{
     private String idCountry;
     private String idCity; // UUID
     private String nameCity;
@@ -35,4 +35,13 @@ public class City{
 
     public long getPopulationCity() {return populationCity;}
     public void setPopulationCity(long populationCity) {this.populationCity = populationCity;}
+
+    @Override
+    public int compareTo(City o) {
+        if (this.getPopulationCity() > o.getPopulationCity()){
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 }
