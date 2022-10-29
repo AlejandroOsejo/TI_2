@@ -35,7 +35,6 @@ public class SearchAndFiltering {
     }
 
     public int filterCountries(int requesPopulation){
-        Country comparePopulation = new Country("", "", requesPopulation, "");
         //traer la lista --> también crear una lista temp para guardar los datos de la póblacion y repartirlos
         //buscar pais por poblacion
 
