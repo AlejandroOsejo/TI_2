@@ -12,8 +12,9 @@ public class Ordering {
                 break;
 
             case 2://Ciudad
+                System.out.println("Has seleccionado ciudad");
 
-
+                orderCity();
                 break;
 
             default:

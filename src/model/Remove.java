@@ -7,18 +7,22 @@ import java.util.ArrayList;
 public class Remove {
     Insert insert = new Insert();
     public void countryOrCity(int cc){
+        String name;
         switch (cc){
             case 1:
                 System.out.println("Has seleccionado eliminar un registro de paises");
                 System.out.println("Ingrese el nombre del pais que quiere eliminar");
-                String name = Main.sc.nextLine();
+                name = Main.sc.nextLine();
 
                 deleteCountry(name);
                 break;
 
             case 2:
                 System.out.println("Has seleccionado eliminar un registro de ciudades");
+                System.out.println("Ingrese el nombre de la ciudad que quiere eliminar");
+                name = Main.sc.nextLine();
 
+                deleteCity(name);
                 break;
 
             default:
@@ -40,7 +44,7 @@ public class Remove {
 
     }
 
-    public void deleteVity(){
+    public void deleteCity(String name){
         //DEbe recibir la lista de ciudades
         //eliminar una ciudad ´por el nombre
         ArrayList<City> temp = new ArrayList<>();
