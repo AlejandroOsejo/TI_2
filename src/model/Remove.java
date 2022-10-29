@@ -43,6 +43,13 @@ public class Remove {
     public void deleteVity(){
         //DEbe recibir la lista de ciudades
         //eliminar una ciudad ´por el nombre
+        ArrayList<City> temp = new ArrayList<>();
 
+        ArrayList<City> city = new ArrayList<>();
+        for (City c :temp){
+            city.add((City)c);
+        }
+        insert.cities.remove(city);
+        return;
     }
 }

@@ -33,6 +33,10 @@ public class Ordering {
     }
 
     public void orderCity(){ //Metodo de organizar la lista por poblacion, ciudades
-
+        System.out.println("LISTA DE LOS PAISES DE MAYOR A MENOR POBLACION");
+        for (int i=0; i>insert.cities.size(); i++){ // coge la lista donde se guardan los paises pero esta vacía, no sé como solucionarlo
+            System.out.println(insert.cities.get(i).getPopulationCity() + " " +
+                    insert.cities.get(i).getNameCity());
+        }
     }
 }
