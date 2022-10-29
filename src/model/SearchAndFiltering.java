@@ -44,13 +44,13 @@ public class SearchAndFiltering {
 
         //Se necesita hallar a un pais por su poblacion
         int left = 0;
-        int right = insert.listGsonCountry.size() - 1;
+        int right = insert.countries.size() - 1;
 
         while (left <= right){
             int mid = left + (right - left) / 2;
-            if (insert.listGsonCountry.get(mid).getPopulation()> requesPopulation){
+            if (insert.countries.get(mid).getPopulation() < requesPopulation){
                 right = mid - 1;
-            } else if (comparePopulation.getPopulation() >insert.countries.get()) { // Debe ser una lista de numeros porque lo esta preguntando por un numero exacto
+            } else if (requesPopulation > insert.countries.get(mid).getPopulation()) { // Debe ser una lista de numeros porque lo esta preguntando por un numero exacto
                 left = mid + 1;
             } else {
                 return mid;
