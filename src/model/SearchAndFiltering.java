@@ -29,9 +29,13 @@ public class SearchAndFiltering {
                 break;
 
             case 3:
-                System.out.println("Has seleccionado filtrar ciudades");
-                System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de ciudades");
+                System.out.println("Has seleccionado buscar paises");
+                System.out.println("Ingrese el nombre que desea buscar dentro de la lista de paises");
+                search = Main.sc.next();
 
+                String index = searchCountryByName(insert.countries,search);
+                System.out.println(index);
+                break;
 
             default:
                 System.out.println("Ingrese un número válido");

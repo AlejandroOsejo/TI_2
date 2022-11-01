@@ -24,11 +24,13 @@ public class InsertComand {
             case 2:// busqueda y filtracion
                 System.out.println("Haz seleccionado la opcion SELECT * FROM WHERE");
                 System.out.println("SELECT * FROM WHERE consiste en imprimir todos " +
-                        "los paises o ciudades con cierta cantidad de poblacion");
-                System.out.println("Primero, ingresa por donde quiere buscar por paises " +
-                        "o por ciudades");
-                System.out.println("1. Paises");
-                System.out.println("2. Ciudades");
+                        "los paises o ciudades con cierta cantidad de poblacion o buscar pur su nombre");
+                System.out.println("Primero, ingresa por si quiere filtrar o buscar paises " +
+                        "o ciudades");
+                System.out.println("1. Filtrar Paises");
+                System.out.println("2. Filtrar Ciudades");
+                System.out.println("3. Buscar Paises");
+                System.out.println("4. Buscar Ciudades");
                 cc = Main.sc.nextInt();
 
                 sf.filter(cc);

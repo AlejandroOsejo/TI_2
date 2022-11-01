@@ -38,7 +38,7 @@ public class Insert implements Comparator<Country> {
                 String a = Main.sc.nextLine();
                 String name = Main.sc.nextLine();
                 System.out.println("Ingrese la poblacion");
-                long population = Main.sc.nextInt();
+                long population = Main.sc.nextLong();
                 System.out.println("Ingrese el indicativo del pais");
                 String b = Main.sc.nextLine();
                 String countryCode = Main.sc.nextLine();
