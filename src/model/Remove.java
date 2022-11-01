@@ -30,7 +30,7 @@ public class Remove {
         }
     }
 
-    public void deleteCountry(String name){
+    public void deleteCountry(String remoCountries){
         //Debe recibir la lista de paises
         //eliminar un pais por el nombre
         ArrayList<Country> temp = new ArrayList<>();
@@ -44,7 +44,7 @@ public class Remove {
 
     }
 
-    public void deleteCity(String name){
+    public void deleteCity(String remoCities){
         //DEbe recibir la lista de ciudades
         //eliminar una ciudad ´por el nombre
         ArrayList<City> temp = new ArrayList<>();
