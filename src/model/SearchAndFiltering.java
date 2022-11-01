@@ -9,10 +9,11 @@ public class SearchAndFiltering {
 
     public void filter(int i){
         int filter;
+        String search;
 
         switch (i){
             case 1:
-                System.out.println("Has seleccionado paises");
+                System.out.println("Has seleccionado filtrar paises");
                 System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de paises");
                 filter = Main.sc.nextInt();
 
@@ -20,12 +21,17 @@ public class SearchAndFiltering {
                 break;
 
             case 2:
-                System.out.println("Has seleccionado ciudades");
+                System.out.println("Has seleccionado filtrar ciudades");
                 System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de ciudades");
                 filter = Main.sc.nextInt();
 
                 filterCities(filter);
                 break;
+
+            case 3:
+                System.out.println("Has seleccionado filtrar ciudades");
+                System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de ciudades");
+
 
             default:
                 System.out.println("Ingrese un número válido");
@@ -83,6 +89,7 @@ public class SearchAndFiltering {
 
         int left = 0;
         int right = temp.size() - 1;
+        String message = "";
         while(left <= right) {
             int mid = (left + right) / 2;
             String wantedCountrymid = String.valueOf(temp.get(mid));
@@ -92,15 +99,18 @@ public class SearchAndFiltering {
                 left = mid + 1;
             } else {
 
-                return String.valueOf(temp.get(mid));
+                message = "El nombre del pais si se encuentra en la lista de pises "+wantedCountry;
+
+                return message;
             }
 
         }
-        return wantedCountry;
+        message ="El nombre del pais que busca " + wantedCountry+" no se encontró";
+        return message;
     }
 
     static public String searchCityByName (ArrayList<City> temp,String wantedCity ){
-
+        String message = "";
         int left = 0;
         int right = temp.size() - 1;
         while(left <= right) {
@@ -111,13 +121,15 @@ public class SearchAndFiltering {
             } else if (wantedCity.compareTo(wantedCityymid)>0) {
                 left = mid + 1;
             } else {
-
-                return String.valueOf(temp.get(mid));
+                message = "El nombre de la ciudad si se encuentra en la lista de pises " +wantedCity;
+                return message;
             }
 
         }
-        return wantedCity;
+        message = "El nombre de la ciudad que busca " + wantedCity+" no se encontró";
+        return message;
     }
+
 
 
 
