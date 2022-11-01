@@ -39,10 +39,11 @@ public class InsertComand {
             case 3:// ordenamiento
                 System.out.println("Has seleccionado la opcion SELECT * FROM WHERE ORDER BY");
                 System.out.println("SELECT * FROM WHERE ORDER BY consite en imprimir todos " +
-                        "los paises o ciudades en orden, de mayor a menor");
-                System.out.println("Primero, ingresa si quieres organizarlo por paises o por ciudades");
-                System.out.println("1. Paises");
-                System.out.println("2. Ciudades");
+                        "los paises o ciudades en orden, de mayor a menor o en orden alfabético");
+                System.out.println("1. Paises de mayor a menor");
+                System.out.println("2. Ciudades de mayor a menor");
+                System.out.println("3. Paises en orden alfabetico");
+                System.out.println("4. Ciudades en orden alfabetico");
                 cc = Main.sc.nextInt();
 
                 order.countryorCity(cc);
