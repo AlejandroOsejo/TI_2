@@ -1,5 +1,7 @@
 package model;
 
+
+
 import com.google.gson.Gson;
 import ui.Main;
 
@@ -11,7 +13,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.UUID;
 
+
 public class Insert implements Comparator<Country> {
+
+
     ArrayList<Country> countries = new ArrayList<>();
     ArrayList<City> cities = new ArrayList<>();
     ArrayList<Country> listGsonCountry = new ArrayList<>();
@@ -137,4 +142,7 @@ public class Insert implements Comparator<Country> {
         }
         return o1.getName().compareTo(o2.getName());
     }
+
+
+
 }

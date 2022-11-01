@@ -2,13 +2,15 @@ package model;
 
 import ui.Main;
 
+import java.util.ArrayList;
+
 public class SearchAndFiltering {
     Insert insert = new Insert();
 
-    public void filter(int search){
+    public void filter(int i){
         int filter;
 
-        switch (search){
+        switch (i){
             case 1:
                 System.out.println("Has seleccionado paises");
                 System.out.println("Ingrese la poblacion que desea buscar dentro de la lista de paises");
@@ -29,6 +31,7 @@ public class SearchAndFiltering {
                 System.out.println("Ingrese un número válido");
         }
     }
+
 
     public int filterCountries(int requesPopulation){
         //traer la lista --> también crear una lista temp para guardar los datos de la póblacion y repartirlos
@@ -75,6 +78,50 @@ public class SearchAndFiltering {
 
         return left;
     }
+
+    static public String searchCountryByName (ArrayList<Country> temp,String wantedCountry ){
+
+        int left = 0;
+        int right = temp.size() - 1;
+        while(left <= right) {
+            int mid = (left + right) / 2;
+            String wantedCountrymid = String.valueOf(temp.get(mid));
+            if (wantedCountry.compareTo(wantedCountrymid)<0) {
+                right = mid - 1;
+            } else if (wantedCountry.compareTo(wantedCountrymid)>0) {
+                left = mid + 1;
+            } else {
+
+                return String.valueOf(temp.get(mid));
+            }
+
+        }
+        return wantedCountry;
+    }
+
+    static public String searchCityByName (ArrayList<City> temp,String wantedCity ){
+
+        int left = 0;
+        int right = temp.size() - 1;
+        while(left <= right) {
+            int mid = (left + right) / 2;
+            String wantedCityymid = String.valueOf(temp.get(mid));
+            if (wantedCity.compareTo(wantedCityymid)<0) {
+                right = mid - 1;
+            } else if (wantedCity.compareTo(wantedCityymid)>0) {
+                left = mid + 1;
+            } else {
+
+                return String.valueOf(temp.get(mid));
+            }
+
+        }
+        return wantedCity;
+    }
+
+
+
+
 
 
 
