@@ -8,13 +8,13 @@ public class Ordering {
             case 1://Pais
                 System.out.println("Has seleccionado pais");
 
-                orderCountry();
+                orderCountryByPopulation();
                 break;
 
             case 2://Ciudad
                 System.out.println("Has seleccionado ciudad");
 
-                orderCity();
+                orderCityByPopulation();
                 break;
 
             default:
@@ -22,7 +22,7 @@ public class Ordering {
         }
     }
 
-    public void orderCountry(){//metodo de organizar la lista por la poblacion, paises
+    public void orderCountryByPopulation(){//metodo de organizar la lista por la poblacion, paises
         //Comparator<Country> p1 = new Insert();
         //Collections.sort(insert.countries, p1);
 
@@ -33,7 +33,7 @@ public class Ordering {
         }
     }
 
-    public void orderCity(){ //Metodo de organizar la lista por poblacion, ciudades
+    public void orderCityByPopulation(){ //Metodo de organizar la lista por poblacion, ciudades
         System.out.println("LISTA DE LOS PAISES DE MAYOR A MENOR POBLACION");
         for (int i=0; i>insert.cities.size(); i++){ // coge la lista donde se guardan los paises pero esta vacía, no sé como solucionarlo
             System.out.println(insert.cities.get(i).getPopulationCity() + " " +
