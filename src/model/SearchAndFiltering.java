@@ -36,6 +36,15 @@ public class SearchAndFiltering {
                 String index = searchCountryByName(insert.countries,search);
                 System.out.println(index);
                 break;
+            case 4:
+                System.out.println("Has seleccionado buscar ciudades");
+                System.out.println("Ingrese el nombre que desea buscar dentro de la lista de ciudades");
+                search = Main.sc.next();
+
+                String index2 = searchCityByName(insert.cities,search);
+                System.out.println(index2);
+                break;
+
 
             default:
                 System.out.println("Ingrese un número válido");
@@ -96,7 +105,7 @@ public class SearchAndFiltering {
         String message = "";
         while(left <= right) {
             int mid = (left + right) / 2;
-            String wantedCountrymid = String.valueOf(temp.get(mid));
+            String wantedCountrymid = String.valueOf(temp.get(mid).getName());
             if (wantedCountry.compareTo(wantedCountrymid)<0) {
                 right = mid - 1;
             } else if (wantedCountry.compareTo(wantedCountrymid)>0) {
@@ -119,7 +128,7 @@ public class SearchAndFiltering {
         int right = temp.size() - 1;
         while(left <= right) {
             int mid = (left + right) / 2;
-            String wantedCityymid = String.valueOf(temp.get(mid));
+            String wantedCityymid = String.valueOf(temp.get(mid).getNameCity());
             if (wantedCity.compareTo(wantedCityymid)<0) {
                 right = mid - 1;
             } else if (wantedCity.compareTo(wantedCityymid)>0) {
@@ -133,13 +142,5 @@ public class SearchAndFiltering {
         message = "El nombre de la ciudad que busca " + wantedCity+" no se encontró";
         return message;
     }
-
-
-
-
-
-
-
-
 
 }

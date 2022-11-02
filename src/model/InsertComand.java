@@ -52,9 +52,11 @@ public class InsertComand {
             case 4://eliminacion
                 System.out.println("Has seleccionado la opcion DELETE FROM");
                 System.out.println("DELETE FROM consiste en eliminar un registro");
-                System.out.println("Primero ingresa si quieres elminar un registro de paises o de ciudades");
+                System.out.println("Primero ingresa si quieres elminar un registro de paises o de ciudades o eliminarlos por su poblacion");
                 System.out.println("1. Paises");
                 System.out.println("2. Ciudades");
+                System.out.println("3. Paises por poblacion");
+                System.out.println("4. Ciudades por poblacion");
                 cc = Main.sc.nextInt();
 
                 remove.countryOrCity(cc);
